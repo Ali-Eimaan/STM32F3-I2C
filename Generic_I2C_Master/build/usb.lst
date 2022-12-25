@@ -1,0 +1,451 @@
+ARM GAS  /tmp/ccntibLa.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usb.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.MX_USB_PCD_Init,"ax",%progbits
+  20              		.align	1
+  21              		.global	MX_USB_PCD_Init
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	MX_USB_PCD_Init:
+  27              	.LFB130:
+  28              		.file 1 "Core/Src/usb.c"
+   1:Core/Src/usb.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/usb.c **** /**
+   3:Core/Src/usb.c ****   ******************************************************************************
+   4:Core/Src/usb.c ****   * @file    usb.c
+   5:Core/Src/usb.c ****   * @brief   This file provides code for the configuration
+   6:Core/Src/usb.c ****   *          of the USB instances.
+   7:Core/Src/usb.c ****   ******************************************************************************
+   8:Core/Src/usb.c ****   * @attention
+   9:Core/Src/usb.c ****   *
+  10:Core/Src/usb.c ****   * Copyright (c) 2022 STMicroelectronics.
+  11:Core/Src/usb.c ****   * All rights reserved.
+  12:Core/Src/usb.c ****   *
+  13:Core/Src/usb.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/usb.c ****   * in the root directory of this software component.
+  15:Core/Src/usb.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:Core/Src/usb.c ****   *
+  17:Core/Src/usb.c ****   ******************************************************************************
+  18:Core/Src/usb.c ****   */
+  19:Core/Src/usb.c **** /* USER CODE END Header */
+  20:Core/Src/usb.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/usb.c **** #include "usb.h"
+  22:Core/Src/usb.c **** 
+  23:Core/Src/usb.c **** /* USER CODE BEGIN 0 */
+  24:Core/Src/usb.c **** 
+  25:Core/Src/usb.c **** /* USER CODE END 0 */
+  26:Core/Src/usb.c **** 
+  27:Core/Src/usb.c **** PCD_HandleTypeDef hpcd_USB_FS;
+  28:Core/Src/usb.c **** 
+  29:Core/Src/usb.c **** /* USB init function */
+  30:Core/Src/usb.c **** 
+ARM GAS  /tmp/ccntibLa.s 			page 2
+
+
+  31:Core/Src/usb.c **** void MX_USB_PCD_Init(void)
+  32:Core/Src/usb.c **** {
+  29              		.loc 1 32 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  33:Core/Src/usb.c **** 
+  34:Core/Src/usb.c ****   /* USER CODE BEGIN USB_Init 0 */
+  35:Core/Src/usb.c **** 
+  36:Core/Src/usb.c ****   /* USER CODE END USB_Init 0 */
+  37:Core/Src/usb.c **** 
+  38:Core/Src/usb.c ****   /* USER CODE BEGIN USB_Init 1 */
+  39:Core/Src/usb.c **** 
+  40:Core/Src/usb.c ****   /* USER CODE END USB_Init 1 */
+  41:Core/Src/usb.c ****   hpcd_USB_FS.Instance = USB;
+  38              		.loc 1 41 3 view .LVU1
+  39              		.loc 1 41 24 is_stmt 0 view .LVU2
+  40 0002 0948     		ldr	r0, .L5
+  41 0004 094B     		ldr	r3, .L5+4
+  42 0006 0360     		str	r3, [r0]
+  42:Core/Src/usb.c ****   hpcd_USB_FS.Init.dev_endpoints = 8;
+  43              		.loc 1 42 3 is_stmt 1 view .LVU3
+  44              		.loc 1 42 34 is_stmt 0 view .LVU4
+  45 0008 0823     		movs	r3, #8
+  46 000a 4360     		str	r3, [r0, #4]
+  43:Core/Src/usb.c ****   hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
+  47              		.loc 1 43 3 is_stmt 1 view .LVU5
+  48              		.loc 1 43 26 is_stmt 0 view .LVU6
+  49 000c 0223     		movs	r3, #2
+  50 000e 8360     		str	r3, [r0, #8]
+  44:Core/Src/usb.c ****   hpcd_USB_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
+  51              		.loc 1 44 3 is_stmt 1 view .LVU7
+  52              		.loc 1 44 31 is_stmt 0 view .LVU8
+  53 0010 0361     		str	r3, [r0, #16]
+  45:Core/Src/usb.c ****   hpcd_USB_FS.Init.low_power_enable = DISABLE;
+  54              		.loc 1 45 3 is_stmt 1 view .LVU9
+  55              		.loc 1 45 37 is_stmt 0 view .LVU10
+  56 0012 0023     		movs	r3, #0
+  57 0014 8361     		str	r3, [r0, #24]
+  46:Core/Src/usb.c ****   hpcd_USB_FS.Init.battery_charging_enable = DISABLE;
+  58              		.loc 1 46 3 is_stmt 1 view .LVU11
+  59              		.loc 1 46 44 is_stmt 0 view .LVU12
+  60 0016 0362     		str	r3, [r0, #32]
+  47:Core/Src/usb.c ****   if (HAL_PCD_Init(&hpcd_USB_FS) != HAL_OK)
+  61              		.loc 1 47 3 is_stmt 1 view .LVU13
+  62              		.loc 1 47 7 is_stmt 0 view .LVU14
+  63 0018 FFF7FEFF 		bl	HAL_PCD_Init
+  64              	.LVL0:
+  65              		.loc 1 47 6 view .LVU15
+  66 001c 00B9     		cbnz	r0, .L4
+  67              	.L1:
+  48:Core/Src/usb.c ****   {
+ARM GAS  /tmp/ccntibLa.s 			page 3
+
+
+  49:Core/Src/usb.c ****     Error_Handler();
+  50:Core/Src/usb.c ****   }
+  51:Core/Src/usb.c ****   /* USER CODE BEGIN USB_Init 2 */
+  52:Core/Src/usb.c **** 
+  53:Core/Src/usb.c ****   /* USER CODE END USB_Init 2 */
+  54:Core/Src/usb.c **** 
+  55:Core/Src/usb.c **** }
+  68              		.loc 1 55 1 view .LVU16
+  69 001e 08BD     		pop	{r3, pc}
+  70              	.L4:
+  49:Core/Src/usb.c ****   }
+  71              		.loc 1 49 5 is_stmt 1 view .LVU17
+  72 0020 FFF7FEFF 		bl	Error_Handler
+  73              	.LVL1:
+  74              		.loc 1 55 1 is_stmt 0 view .LVU18
+  75 0024 FBE7     		b	.L1
+  76              	.L6:
+  77 0026 00BF     		.align	2
+  78              	.L5:
+  79 0028 00000000 		.word	.LANCHOR0
+  80 002c 005C0040 		.word	1073765376
+  81              		.cfi_endproc
+  82              	.LFE130:
+  84              		.section	.text.HAL_PCD_MspInit,"ax",%progbits
+  85              		.align	1
+  86              		.global	HAL_PCD_MspInit
+  87              		.syntax unified
+  88              		.thumb
+  89              		.thumb_func
+  91              	HAL_PCD_MspInit:
+  92              	.LVL2:
+  93              	.LFB131:
+  56:Core/Src/usb.c **** 
+  57:Core/Src/usb.c **** void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
+  58:Core/Src/usb.c **** {
+  94              		.loc 1 58 1 is_stmt 1 view -0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 32
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		.loc 1 58 1 is_stmt 0 view .LVU20
+  99 0000 10B5     		push	{r4, lr}
+ 100              	.LCFI1:
+ 101              		.cfi_def_cfa_offset 8
+ 102              		.cfi_offset 4, -8
+ 103              		.cfi_offset 14, -4
+ 104 0002 88B0     		sub	sp, sp, #32
+ 105              	.LCFI2:
+ 106              		.cfi_def_cfa_offset 40
+  59:Core/Src/usb.c **** 
+  60:Core/Src/usb.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+ 107              		.loc 1 60 3 is_stmt 1 view .LVU21
+ 108              		.loc 1 60 20 is_stmt 0 view .LVU22
+ 109 0004 0023     		movs	r3, #0
+ 110 0006 0393     		str	r3, [sp, #12]
+ 111 0008 0493     		str	r3, [sp, #16]
+ 112 000a 0593     		str	r3, [sp, #20]
+ 113 000c 0693     		str	r3, [sp, #24]
+ARM GAS  /tmp/ccntibLa.s 			page 4
+
+
+ 114 000e 0793     		str	r3, [sp, #28]
+  61:Core/Src/usb.c ****   if(pcdHandle->Instance==USB)
+ 115              		.loc 1 61 3 is_stmt 1 view .LVU23
+ 116              		.loc 1 61 15 is_stmt 0 view .LVU24
+ 117 0010 0268     		ldr	r2, [r0]
+ 118              		.loc 1 61 5 view .LVU25
+ 119 0012 134B     		ldr	r3, .L11
+ 120 0014 9A42     		cmp	r2, r3
+ 121 0016 01D0     		beq	.L10
+ 122              	.LVL3:
+ 123              	.L7:
+  62:Core/Src/usb.c ****   {
+  63:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspInit 0 */
+  64:Core/Src/usb.c **** 
+  65:Core/Src/usb.c ****   /* USER CODE END USB_MspInit 0 */
+  66:Core/Src/usb.c **** 
+  67:Core/Src/usb.c ****     __HAL_RCC_GPIOA_CLK_ENABLE();
+  68:Core/Src/usb.c ****     /**USB GPIO Configuration
+  69:Core/Src/usb.c ****     PA11     ------> USB_DM
+  70:Core/Src/usb.c ****     PA12     ------> USB_DP
+  71:Core/Src/usb.c ****     */
+  72:Core/Src/usb.c ****     GPIO_InitStruct.Pin = DM_Pin|DP_Pin;
+  73:Core/Src/usb.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  74:Core/Src/usb.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+  75:Core/Src/usb.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  76:Core/Src/usb.c ****     GPIO_InitStruct.Alternate = GPIO_AF14_USB;
+  77:Core/Src/usb.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  78:Core/Src/usb.c **** 
+  79:Core/Src/usb.c ****     /* USB clock enable */
+  80:Core/Src/usb.c ****     __HAL_RCC_USB_CLK_ENABLE();
+  81:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspInit 1 */
+  82:Core/Src/usb.c **** 
+  83:Core/Src/usb.c ****   /* USER CODE END USB_MspInit 1 */
+  84:Core/Src/usb.c ****   }
+  85:Core/Src/usb.c **** }
+ 124              		.loc 1 85 1 view .LVU26
+ 125 0018 08B0     		add	sp, sp, #32
+ 126              	.LCFI3:
+ 127              		.cfi_remember_state
+ 128              		.cfi_def_cfa_offset 8
+ 129              		@ sp needed
+ 130 001a 10BD     		pop	{r4, pc}
+ 131              	.LVL4:
+ 132              	.L10:
+ 133              	.LCFI4:
+ 134              		.cfi_restore_state
+  67:Core/Src/usb.c ****     /**USB GPIO Configuration
+ 135              		.loc 1 67 5 is_stmt 1 view .LVU27
+ 136              	.LBB2:
+  67:Core/Src/usb.c ****     /**USB GPIO Configuration
+ 137              		.loc 1 67 5 view .LVU28
+  67:Core/Src/usb.c ****     /**USB GPIO Configuration
+ 138              		.loc 1 67 5 view .LVU29
+ 139 001c 114C     		ldr	r4, .L11+4
+ 140 001e 6369     		ldr	r3, [r4, #20]
+ 141 0020 43F40033 		orr	r3, r3, #131072
+ 142 0024 6361     		str	r3, [r4, #20]
+ARM GAS  /tmp/ccntibLa.s 			page 5
+
+
+  67:Core/Src/usb.c ****     /**USB GPIO Configuration
+ 143              		.loc 1 67 5 view .LVU30
+ 144 0026 6369     		ldr	r3, [r4, #20]
+ 145 0028 03F40033 		and	r3, r3, #131072
+ 146 002c 0193     		str	r3, [sp, #4]
+  67:Core/Src/usb.c ****     /**USB GPIO Configuration
+ 147              		.loc 1 67 5 view .LVU31
+ 148 002e 019B     		ldr	r3, [sp, #4]
+ 149              	.LBE2:
+  67:Core/Src/usb.c ****     /**USB GPIO Configuration
+ 150              		.loc 1 67 5 view .LVU32
+  72:Core/Src/usb.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 151              		.loc 1 72 5 view .LVU33
+  72:Core/Src/usb.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 152              		.loc 1 72 25 is_stmt 0 view .LVU34
+ 153 0030 4FF4C053 		mov	r3, #6144
+ 154 0034 0393     		str	r3, [sp, #12]
+  73:Core/Src/usb.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 155              		.loc 1 73 5 is_stmt 1 view .LVU35
+  73:Core/Src/usb.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 156              		.loc 1 73 26 is_stmt 0 view .LVU36
+ 157 0036 0223     		movs	r3, #2
+ 158 0038 0493     		str	r3, [sp, #16]
+  74:Core/Src/usb.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+ 159              		.loc 1 74 5 is_stmt 1 view .LVU37
+  75:Core/Src/usb.c ****     GPIO_InitStruct.Alternate = GPIO_AF14_USB;
+ 160              		.loc 1 75 5 view .LVU38
+  75:Core/Src/usb.c ****     GPIO_InitStruct.Alternate = GPIO_AF14_USB;
+ 161              		.loc 1 75 27 is_stmt 0 view .LVU39
+ 162 003a 0323     		movs	r3, #3
+ 163 003c 0693     		str	r3, [sp, #24]
+  76:Core/Src/usb.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+ 164              		.loc 1 76 5 is_stmt 1 view .LVU40
+  76:Core/Src/usb.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+ 165              		.loc 1 76 31 is_stmt 0 view .LVU41
+ 166 003e 0E23     		movs	r3, #14
+ 167 0040 0793     		str	r3, [sp, #28]
+  77:Core/Src/usb.c **** 
+ 168              		.loc 1 77 5 is_stmt 1 view .LVU42
+ 169 0042 03A9     		add	r1, sp, #12
+ 170 0044 4FF09040 		mov	r0, #1207959552
+ 171              	.LVL5:
+  77:Core/Src/usb.c **** 
+ 172              		.loc 1 77 5 is_stmt 0 view .LVU43
+ 173 0048 FFF7FEFF 		bl	HAL_GPIO_Init
+ 174              	.LVL6:
+  80:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspInit 1 */
+ 175              		.loc 1 80 5 is_stmt 1 view .LVU44
+ 176              	.LBB3:
+  80:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspInit 1 */
+ 177              		.loc 1 80 5 view .LVU45
+  80:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspInit 1 */
+ 178              		.loc 1 80 5 view .LVU46
+ 179 004c E369     		ldr	r3, [r4, #28]
+ 180 004e 43F40003 		orr	r3, r3, #8388608
+ 181 0052 E361     		str	r3, [r4, #28]
+  80:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspInit 1 */
+ARM GAS  /tmp/ccntibLa.s 			page 6
+
+
+ 182              		.loc 1 80 5 view .LVU47
+ 183 0054 E369     		ldr	r3, [r4, #28]
+ 184 0056 03F40003 		and	r3, r3, #8388608
+ 185 005a 0293     		str	r3, [sp, #8]
+  80:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspInit 1 */
+ 186              		.loc 1 80 5 view .LVU48
+ 187 005c 029B     		ldr	r3, [sp, #8]
+ 188              	.LBE3:
+  80:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspInit 1 */
+ 189              		.loc 1 80 5 view .LVU49
+ 190              		.loc 1 85 1 is_stmt 0 view .LVU50
+ 191 005e DBE7     		b	.L7
+ 192              	.L12:
+ 193              		.align	2
+ 194              	.L11:
+ 195 0060 005C0040 		.word	1073765376
+ 196 0064 00100240 		.word	1073876992
+ 197              		.cfi_endproc
+ 198              	.LFE131:
+ 200              		.section	.text.HAL_PCD_MspDeInit,"ax",%progbits
+ 201              		.align	1
+ 202              		.global	HAL_PCD_MspDeInit
+ 203              		.syntax unified
+ 204              		.thumb
+ 205              		.thumb_func
+ 207              	HAL_PCD_MspDeInit:
+ 208              	.LVL7:
+ 209              	.LFB132:
+  86:Core/Src/usb.c **** 
+  87:Core/Src/usb.c **** void HAL_PCD_MspDeInit(PCD_HandleTypeDef* pcdHandle)
+  88:Core/Src/usb.c **** {
+ 210              		.loc 1 88 1 is_stmt 1 view -0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214              		.loc 1 88 1 is_stmt 0 view .LVU52
+ 215 0000 08B5     		push	{r3, lr}
+ 216              	.LCFI5:
+ 217              		.cfi_def_cfa_offset 8
+ 218              		.cfi_offset 3, -8
+ 219              		.cfi_offset 14, -4
+  89:Core/Src/usb.c **** 
+  90:Core/Src/usb.c ****   if(pcdHandle->Instance==USB)
+ 220              		.loc 1 90 3 is_stmt 1 view .LVU53
+ 221              		.loc 1 90 15 is_stmt 0 view .LVU54
+ 222 0002 0268     		ldr	r2, [r0]
+ 223              		.loc 1 90 5 view .LVU55
+ 224 0004 074B     		ldr	r3, .L17
+ 225 0006 9A42     		cmp	r2, r3
+ 226 0008 00D0     		beq	.L16
+ 227              	.LVL8:
+ 228              	.L13:
+  91:Core/Src/usb.c ****   {
+  92:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspDeInit 0 */
+  93:Core/Src/usb.c **** 
+  94:Core/Src/usb.c ****   /* USER CODE END USB_MspDeInit 0 */
+  95:Core/Src/usb.c ****     /* Peripheral clock disable */
+ARM GAS  /tmp/ccntibLa.s 			page 7
+
+
+  96:Core/Src/usb.c ****     __HAL_RCC_USB_CLK_DISABLE();
+  97:Core/Src/usb.c **** 
+  98:Core/Src/usb.c ****     /**USB GPIO Configuration
+  99:Core/Src/usb.c ****     PA11     ------> USB_DM
+ 100:Core/Src/usb.c ****     PA12     ------> USB_DP
+ 101:Core/Src/usb.c ****     */
+ 102:Core/Src/usb.c ****     HAL_GPIO_DeInit(GPIOA, DM_Pin|DP_Pin);
+ 103:Core/Src/usb.c **** 
+ 104:Core/Src/usb.c ****   /* USER CODE BEGIN USB_MspDeInit 1 */
+ 105:Core/Src/usb.c **** 
+ 106:Core/Src/usb.c ****   /* USER CODE END USB_MspDeInit 1 */
+ 107:Core/Src/usb.c ****   }
+ 108:Core/Src/usb.c **** }
+ 229              		.loc 1 108 1 view .LVU56
+ 230 000a 08BD     		pop	{r3, pc}
+ 231              	.LVL9:
+ 232              	.L16:
+  96:Core/Src/usb.c **** 
+ 233              		.loc 1 96 5 is_stmt 1 view .LVU57
+ 234 000c 064A     		ldr	r2, .L17+4
+ 235 000e D369     		ldr	r3, [r2, #28]
+ 236 0010 23F40003 		bic	r3, r3, #8388608
+ 237 0014 D361     		str	r3, [r2, #28]
+ 102:Core/Src/usb.c **** 
+ 238              		.loc 1 102 5 view .LVU58
+ 239 0016 4FF4C051 		mov	r1, #6144
+ 240 001a 4FF09040 		mov	r0, #1207959552
+ 241              	.LVL10:
+ 102:Core/Src/usb.c **** 
+ 242              		.loc 1 102 5 is_stmt 0 view .LVU59
+ 243 001e FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 244              	.LVL11:
+ 245              		.loc 1 108 1 view .LVU60
+ 246 0022 F2E7     		b	.L13
+ 247              	.L18:
+ 248              		.align	2
+ 249              	.L17:
+ 250 0024 005C0040 		.word	1073765376
+ 251 0028 00100240 		.word	1073876992
+ 252              		.cfi_endproc
+ 253              	.LFE132:
+ 255              		.global	hpcd_USB_FS
+ 256              		.section	.bss.hpcd_USB_FS,"aw",%nobits
+ 257              		.align	2
+ 258              		.set	.LANCHOR0,. + 0
+ 261              	hpcd_USB_FS:
+ 262 0000 00000000 		.space	748
+ 262      00000000 
+ 262      00000000 
+ 262      00000000 
+ 262      00000000 
+ 263              		.text
+ 264              	.Letext0:
+ 265              		.file 2 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h"
+ 266              		.file 3 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h"
+ 267              		.file 4 "Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303xc.h"
+ 268              		.file 5 "Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h"
+ARM GAS  /tmp/ccntibLa.s 			page 8
+
+
+ 269              		.file 6 "Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h"
+ 270              		.file 7 "Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio.h"
+ 271              		.file 8 "Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_ll_usb.h"
+ 272              		.file 9 "Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pcd.h"
+ 273              		.file 10 "Core/Inc/main.h"
+ 274              		.file 11 "Core/Inc/usb.h"
+ARM GAS  /tmp/ccntibLa.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 usb.c
+     /tmp/ccntibLa.s:20     .text.MX_USB_PCD_Init:0000000000000000 $t
+     /tmp/ccntibLa.s:26     .text.MX_USB_PCD_Init:0000000000000000 MX_USB_PCD_Init
+     /tmp/ccntibLa.s:79     .text.MX_USB_PCD_Init:0000000000000028 $d
+     /tmp/ccntibLa.s:85     .text.HAL_PCD_MspInit:0000000000000000 $t
+     /tmp/ccntibLa.s:91     .text.HAL_PCD_MspInit:0000000000000000 HAL_PCD_MspInit
+     /tmp/ccntibLa.s:195    .text.HAL_PCD_MspInit:0000000000000060 $d
+     /tmp/ccntibLa.s:201    .text.HAL_PCD_MspDeInit:0000000000000000 $t
+     /tmp/ccntibLa.s:207    .text.HAL_PCD_MspDeInit:0000000000000000 HAL_PCD_MspDeInit
+     /tmp/ccntibLa.s:250    .text.HAL_PCD_MspDeInit:0000000000000024 $d
+     /tmp/ccntibLa.s:261    .bss.hpcd_USB_FS:0000000000000000 hpcd_USB_FS
+     /tmp/ccntibLa.s:257    .bss.hpcd_USB_FS:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+HAL_PCD_Init
+Error_Handler
+HAL_GPIO_Init
+HAL_GPIO_DeInit
